@@ -23,11 +23,14 @@ install:
   - mkdir sfdx
 
   #Install SFDX
-  - wget -qO- $CLIURL | tar xJ -C sfdx --strip-components 1
+  - sudo wget -qO- $CLIURL | tar xJ -C sfdx --strip-components 1
   - "./sfdx/install"
   - export PATH=./sfdx/$(pwd):$PATH
   - sfdx --version
   - sfdx plugins --core
+
+  #Install JSON Processeor
+  - sudo apt-get install -y jq
 
 build_script:
   #Decrypt server key
