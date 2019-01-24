@@ -30,6 +30,8 @@ install:
   - sfdx plugins --core
 
 build_script:
+  #Authorize DevHub
+  - sfdx force:auth:jwt:grant --clientid $HUB_CONSUMER_KEY --jwtkeyfile assets/server.key --username $HUB_USER_NAME --setdefaultdevhubusername --setalias HubOrg
   #Create Scratch Org
   - sfdx force:org:create --targetdevhubusername HubOrg --setdefaultusername --definitionfile config/project-scratch-def.json --setalias ciorg --wait 10 --durationdays 1
   - sfdx force:org:display --targetusername ciorg
