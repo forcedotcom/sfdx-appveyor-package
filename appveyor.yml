@@ -20,7 +20,7 @@ install:
   - export PACKAGEVERSION=""
 
   #Create SFDX directory
-  - sudo mkdir sfdx
+  - mkdir sfdx
 
   #Install SFDX
   - sudo wget -qO- $CLIURL | tar xJ -C sfdx --strip-components 1
