@@ -24,7 +24,7 @@ install:
 
   #Install SFDX
   - sudo wget -qO- $CLIURL | tar xJ -C sfdx --strip-components 1
-  - sudo "./sfdx/install"
+  - "./sfdx/install"
   - export PATH=./sfdx/$(pwd):$PATH
   - sfdx --version
   - sfdx plugins --core
