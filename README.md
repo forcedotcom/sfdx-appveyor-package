@@ -14,7 +14,7 @@ If any any of these assumptions aren't true, the following steps won't work.
 
 2) Clone your forked repo locally: `git clone https://github.com/<git_username>/sfdx-appveyor-package.git`
 
-3) Make sure you have the Salesforce CLI installed. Check by running `sfdx force --help` and confirm you see the command output. If you don't have it installed you can download and install it from [here](https://developer.salesforce.com/tools/sfdxcli).
+3) Make sure you have the Salesforce CLI installed. Check by running `sfdx force --help` and confirm you see the command output. If you don't have it installed, you can download and install it from [here](https://developer.salesforce.com/tools/sfdxcli).
 
 4) Setup a JWT-based auth flow for the target orgs that you want to deploy to.  This step will create a server.key file that will be used in subsequent steps.
 (https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_auth_jwt_flow.htm)
@@ -45,7 +45,7 @@ openssl enc -nosalt -aes-256-cbc -in assets/server.key -out assets/server.key.en
 
 - Store the `key`, and `iv` values somewhere safe, you will need these in values in a subsequent step in the Appveyor UI. These valus are considered *secret* so please treat them as such.
 
-7) From you JWT-Based connected app on Salesforce, retrieve the generated `Consumer Key`. This should be from your DevHub org.
+7) From your JWT-Based connected app on Salesforce, retrieve the generated `Consumer Key`. This should be from your DevHub org.
 
 8) Set your `Consumer Key` in a Appveyor environment variable named `HUB_CONSUMER_KEY` using the Appveyor UI. Set your `Username` in a Appveyor environment variable named `HUB_USER_NAME` using the Appveyor UI.  Note that this username is the username that you use to access your Dev Hub.
 
