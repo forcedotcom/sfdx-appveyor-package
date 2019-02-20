@@ -4,7 +4,7 @@ image: ubuntu
 
 install:
   #
-  # The install step will download the Salesforce CLI and install it and where variables are defined.
+  # Download Salesforce CLI and define environment variables
   #
   #Assign variables
   - export CLIURL=https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
@@ -19,7 +19,7 @@ install:
   - export PACKAGENAME="0Ho0N000000CaTISA0"
   - export PACKAGEVERSION=""
 
-  #Create SFDX directory
+  #Create sfdx directory
   - mkdir sfdx
 
   #Install Salesforce CLI
@@ -40,7 +40,7 @@ build_script:
   #Create scratch org
   - sfdx force:org:create --targetdevhubusername HubOrg --setdefaultusername --definitionfile config/project-scratch-def.json --setalias ciorg --wait 10 --durationdays 1
   - sfdx force:org:display --targetusername ciorg
-  #Push source scratch org
+  #Push source to scratch org
   - sfdx force:source:push --targetusername ciorg
   #Run unit tests on scratch org
   - sfdx force:apex:test:run --targetusername ciorg --wait 10 --resultformat tap --codecoverage --testlevel $TESTLEVEL
