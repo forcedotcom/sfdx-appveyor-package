@@ -16,7 +16,7 @@
     "sfdcLoginUrl": "https://login.salesforce.com",
     "sourceApiVersion": "44.0",
     "packageAliases": {
-        "Appveyor": "0Ho0N000000CaTISA0",
-        "Appveyor@0.1.0-1": "04t0N000001E1pnQAC"
+        "Appveyor": "0Ho4x000000XZOaCAO",
+        "Appveyor@0.1.0-1": "04t4x000000ycGfAAI"
     }
 }
